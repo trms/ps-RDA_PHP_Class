@@ -1,0 +1,3129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">44</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                            <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1704615245"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-1704615245" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/RDA.html">RDA</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/default.html">\</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\</small>RDA</h1>
+                    <p><em>Adapter for Carousel RDA</em></p>
+                    
+
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/RDA.html#method___construct" class="">__construct()</a><br />
+                                                                    <a href="../classes/RDA.html#method_setZoneIDs" class="">setZoneIDs()</a><br />
+                                                                    <a href="../classes/RDA.html#method_getZoneIDs" class="">getZoneIDs()</a><br />
+                                                                    <a href="../classes/RDA.html#method_clearZoneIDs" class="">clearZoneIDs()</a><br />
+                                                                    <a href="../classes/RDA.html#method_setZoneTags" class="">setZoneTags()</a><br />
+                                                                    <a href="../classes/RDA.html#method_getZoneTags" class="">getZoneTags()</a><br />
+                                                                    <a href="../classes/RDA.html#method_clearZoneTags" class="">clearZoneTags()</a><br />
+                                                                    <a href="../classes/RDA.html#method_setZoneNames" class="">setZoneNames()</a><br />
+                                                                    <a href="../classes/RDA.html#method_getZoneNames" class="">getZoneNames()</a><br />
+                                                                    <a href="../classes/RDA.html#method_clearZoneNames" class="">clearZoneNames()</a><br />
+                                                                    <a href="../classes/RDA.html#method_resetZones" class="">resetZones()</a><br />
+                                                                    <a href="../classes/RDA.html#method_setTemplateName" class="">setTemplateName()</a><br />
+                                                                    <a href="../classes/RDA.html#method_getTemplateName" class="">getTemplateName()</a><br />
+                                                                    <a href="../classes/RDA.html#method_setBulletinGuids" class="">setBulletinGuids()</a><br />
+                                                                    <a href="../classes/RDA.html#method_getBulletinGuids" class="">getBulletinGuids()</a><br />
+                                                                    <a href="../classes/RDA.html#method_clearBulletinGuids" class="">clearBulletinGuids()</a><br />
+                                                                    <a href="../classes/RDA.html#method_setCrawlGuids" class="">setCrawlGuids()</a><br />
+                                                                    <a href="../classes/RDA.html#method_getCrawlGuids" class="">getCrawlGuids()</a><br />
+                                                                    <a href="../classes/RDA.html#method_clearCrawlGuids" class="">clearCrawlGuids()</a><br />
+                                                                    <a href="../classes/RDA.html#method_setBulletinTags" class="">setBulletinTags()</a><br />
+                                                                    <a href="../classes/RDA.html#method_getBulletinTags" class="">getBulletinTags()</a><br />
+                                                                    <a href="../classes/RDA.html#method_clearBulletinTags" class="">clearBulletinTags()</a><br />
+                                                                    <a href="../classes/RDA.html#method_setSchedule" class="">setSchedule()</a><br />
+                                                                    <a href="../classes/RDA.html#method_getSchedule" class="">getSchedule()</a><br />
+                                                                    <a href="../classes/RDA.html#method_clearSchedule" class="">clearSchedule()</a><br />
+                                                                    <a href="../classes/RDA.html#method_setCycleTime" class="">setCycleTime()</a><br />
+                                                                    <a href="../classes/RDA.html#method_getCycleTime" class="">getCycleTime()</a><br />
+                                                                    <a href="../classes/RDA.html#method_clearCycleTime" class="">clearCycleTime()</a><br />
+                                                                    <a href="../classes/RDA.html#method_setWeekDays" class="">setWeekDays()</a><br />
+                                                                    <a href="../classes/RDA.html#method_setBlock" class="">setBlock()</a><br />
+                                                                    <a href="../classes/RDA.html#method_getBlocks" class="">getBlocks()</a><br />
+                                                                    <a href="../classes/RDA.html#method_clearBlocks" class="">clearBlocks()</a><br />
+                                                                    <a href="../classes/RDA.html#method_IsAlert" class="">IsAlert()</a><br />
+                                                                    <a href="../classes/RDA.html#method_CreatePage" class="">CreatePage()</a><br />
+                                                                    <a href="../classes/RDA.html#method_UpdatePage" class="">UpdatePage()</a><br />
+                                                                    <a href="../classes/RDA.html#method_ChangePageStatus" class="">ChangePageStatus()</a><br />
+                                                                    <a href="../classes/RDA.html#method_SetPageStatus" class="">SetPageStatus()</a><br />
+                                                                    <a href="../classes/RDA.html#method_DeactivateAllAlertPages" class="">DeactivateAllAlertPages()</a><br />
+                                                                    <a href="../classes/RDA.html#method_ArchivePage" class="">ArchivePage()</a><br />
+                                                                    <a href="../classes/RDA.html#method_DeletePage" class="">DeletePage()</a><br />
+                                                                    <a href="../classes/RDA.html#method_DeleteAllUserPages" class="">DeleteAllUserPages()</a><br />
+                                                                    <a href="../classes/RDA.html#method_UpdateCrawl" class="">UpdateCrawl()</a><br />
+                                                                    <a href="../classes/RDA.html#method_CreateCrawl" class="">CreateCrawl()</a><br />
+                                                                    <a href="../classes/RDA.html#method_GetZoneList" class="">GetZoneList()</a><br />
+                                                                    <a href="../classes/RDA.html#method_GetTemplateList" class="">GetTemplateList()</a><br />
+                                                                    <a href="../classes/RDA.html#method_GetBulletinList" class="">GetBulletinList()</a><br />
+                                                                    <a href="../classes/RDA.html#method_GetPictureList" class="">GetPictureList()</a><br />
+                                                                    <a href="../classes/RDA.html#method_GetVideoList" class="">GetVideoList()</a><br />
+                                                                    <a href="../classes/RDA.html#method_GetPlayerStatus" class="">GetPlayerStatus()</a><br />
+                                                                    <a href="../classes/RDA.html#method_getLastError" class="">getLastError()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/RDA.html#property_HostIP" class="">$HostIP</a><br />
+                                                                    <a href="../classes/RDA.html#property_UserName" class="">$UserName</a><br />
+                                                                    <a href="../classes/RDA.html#property_Password" class="">$Password</a><br />
+                                                                    <a href="../classes/RDA.html#property_DateTimeOn" class="">$DateTimeOn</a><br />
+                                                                    <a href="../classes/RDA.html#property_WebEnabled" class="">$WebEnabled</a><br />
+                                                                    <a href="../classes/RDA.html#property_DisplayDuration" class="">$DisplayDuration</a><br />
+                                                                    <a href="../classes/RDA.html#property_Description" class="">$Description</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No constants found</em>
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <em>No protected methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No protected properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <a href="../classes/RDA.html#method_fireRDA" class="">fireRDA()</a><br />
+                                                                    <a href="../classes/RDA.html#method_processResponse" class="">processResponse()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/RDA.html#property_Port" class="">$Port</a><br />
+                                                                    <a href="../classes/RDA.html#property_ZoneID" class="">$ZoneID</a><br />
+                                                                    <a href="../classes/RDA.html#property_ZoneTag" class="">$ZoneTag</a><br />
+                                                                    <a href="../classes/RDA.html#property_ZoneName" class="">$ZoneName</a><br />
+                                                                    <a href="../classes/RDA.html#property_TemplateName" class="">$TemplateName</a><br />
+                                                                    <a href="../classes/RDA.html#property_BulletinGuid" class="">$BulletinGuid</a><br />
+                                                                    <a href="../classes/RDA.html#property_BulletinTag" class="">$BulletinTag</a><br />
+                                                                    <a href="../classes/RDA.html#property_CrawlGuid" class="">$CrawlGuid</a><br />
+                                                                    <a href="../classes/RDA.html#property_Alert" class="">$Alert</a><br />
+                                                                    <a href="../classes/RDA.html#property_Block" class="">$Block</a><br />
+                                                                    <a href="../classes/RDA.html#property_AlwaysOn" class="">$AlwaysOn</a><br />
+                                                                    <a href="../classes/RDA.html#property_DateTimeOff" class="">$DateTimeOff</a><br />
+                                                                    <a href="../classes/RDA.html#property_CycleTimeOn" class="">$CycleTimeOn</a><br />
+                                                                    <a href="../classes/RDA.html#property_CycleTimeOff" class="">$CycleTimeOff</a><br />
+                                                                    <a href="../classes/RDA.html#property_Weekdays" class="">$Weekdays</a><br />
+                                                                    <a href="../classes/RDA.html#property_LastError" class="">$LastError</a><br />
+                                                                    <a href="../classes/RDA.html#property_CreatedBulletins" class="">$CreatedBulletins</a><br />
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                        
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/RDA.php.html"><div class="path-wrapper">RDA.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper"></div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                    <div class="namespace-wrapper">\RDA</div>
+                            </dd>
+
+                        
+                        
+                        
+                        
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr>
+                            <th>
+                                author
+                            </th>
+                            <td>
+                                                                    <p>seth.phillips</p>
+                                                            </td>
+                        </tr>
+                                            <tr>
+                            <th>
+                                todo
+                            </th>
+                            <td>
+                                                            </td>
+                        </tr>
+                                        </table>
+                </aside>
+            </div>
+
+                        
+                                    <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_HostIP" name="property_HostIP" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$HostIP</h3>
+                <pre class="signature">$HostIP</pre>
+                <p><em></em></p>
+                
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_UserName" name="property_UserName" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$UserName</h3>
+                <pre class="signature">$UserName</pre>
+                <p><em></em></p>
+                
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_Password" name="property_Password" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$Password</h3>
+                <pre class="signature">$Password</pre>
+                <p><em></em></p>
+                
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_DateTimeOn" name="property_DateTimeOn" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$DateTimeOn</h3>
+                <pre class="signature">$DateTimeOn</pre>
+                <p><em></em></p>
+                
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_WebEnabled" name="property_WebEnabled" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$WebEnabled</h3>
+                <pre class="signature">$WebEnabled</pre>
+                <p><em></em></p>
+                
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_DisplayDuration" name="property_DisplayDuration" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$DisplayDuration</h3>
+                <pre class="signature">$DisplayDuration</pre>
+                <p><em></em></p>
+                
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_Description" name="property_Description" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$Description</h3>
+                <pre class="signature">$Description</pre>
+                <p><em></em></p>
+                
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_Port" name="property_Port" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$Port</h3>
+                <pre class="signature">$Port</pre>
+                <p><em></em></p>
+                
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_ZoneID" name="property_ZoneID" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$ZoneID</h3>
+                <pre class="signature">$ZoneID</pre>
+                <p><em></em></p>
+                
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_ZoneTag" name="property_ZoneTag" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$ZoneTag</h3>
+                <pre class="signature">$ZoneTag</pre>
+                <p><em></em></p>
+                
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_ZoneName" name="property_ZoneName" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$ZoneName</h3>
+                <pre class="signature">$ZoneName</pre>
+                <p><em></em></p>
+                
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_TemplateName" name="property_TemplateName" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$TemplateName</h3>
+                <pre class="signature">$TemplateName</pre>
+                <p><em></em></p>
+                
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_BulletinGuid" name="property_BulletinGuid" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$BulletinGuid</h3>
+                <pre class="signature">$BulletinGuid</pre>
+                <p><em></em></p>
+                
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_BulletinTag" name="property_BulletinTag" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$BulletinTag</h3>
+                <pre class="signature">$BulletinTag</pre>
+                <p><em></em></p>
+                
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_CrawlGuid" name="property_CrawlGuid" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$CrawlGuid</h3>
+                <pre class="signature">$CrawlGuid</pre>
+                <p><em></em></p>
+                
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_Alert" name="property_Alert" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$Alert</h3>
+                <pre class="signature">$Alert</pre>
+                <p><em></em></p>
+                
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_Block" name="property_Block" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$Block</h3>
+                <pre class="signature">$Block</pre>
+                <p><em></em></p>
+                
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_AlwaysOn" name="property_AlwaysOn" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$AlwaysOn</h3>
+                <pre class="signature">$AlwaysOn</pre>
+                <p><em></em></p>
+                
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_DateTimeOff" name="property_DateTimeOff" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$DateTimeOff</h3>
+                <pre class="signature">$DateTimeOff</pre>
+                <p><em></em></p>
+                
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_CycleTimeOn" name="property_CycleTimeOn" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$CycleTimeOn</h3>
+                <pre class="signature">$CycleTimeOn</pre>
+                <p><em></em></p>
+                
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_CycleTimeOff" name="property_CycleTimeOff" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$CycleTimeOff</h3>
+                <pre class="signature">$CycleTimeOff</pre>
+                <p><em></em></p>
+                
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_Weekdays" name="property_Weekdays" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$Weekdays</h3>
+                <pre class="signature">$Weekdays</pre>
+                <p><em></em></p>
+                
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_LastError" name="property_LastError" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$LastError</h3>
+                <pre class="signature">$LastError</pre>
+                <p><em></em></p>
+                
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_CreatedBulletins" name="property_CreatedBulletins" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$CreatedBulletins</h3>
+                <pre class="signature">$CreatedBulletins</pre>
+                <p><em></em></p>
+                
+
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                            
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___construct" name="method___construct" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__construct()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__construct( <span class="argument">$UserName</span>,  <span class="argument">$Password</span>,  <span class="argument">$ServerURI</span>)</pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$UserName </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$Password </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$ServerURI </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setZoneIDs" name="method_setZoneIDs" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setZoneIDs()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setZoneIDs(int|string|array <span class="argument">$ID</span>) : boolean</pre>
+                <p><em>Set Zone IDs</em></p>
+                <p>Allows the setting of 1 or more Zone IDs for use in the RDA.
+This function will overwrite the existing Zone IDs if any have been set.
+Related functions are getZoneIDs() and clearZoneIDs()</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>int|string|array</td>
+                                <td>$ID </td>
+                                <td><p>a single Zone ID or an array of Zone IDs</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>returns false on failure.</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getZoneIDs" name="method_getZoneIDs" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getZoneIDs()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getZoneIDs() : array</pre>
+                <p><em>Get Zone IDs</em></p>
+                <p>Returns the list of Zone IDs
+Related functions are setZoneIDs() and clearZoneIDs()</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>array of Zone IDs</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_clearZoneIDs" name="method_clearZoneIDs" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">clearZoneIDs()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">clearZoneIDs(string|int|null <span class="argument">$ID</span>) : boolean</pre>
+                <p><em>Clear Zone IDs</em></p>
+                <p>Clears out one or all of the zone IDs that have been set by setZoneIDs().</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string|int|null</td>
+                                <td>$ID </td>
+                                <td><p>A single zone ID or Null. Passing null will clear out all Zone IDs.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>returns true on success</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setZoneTags" name="method_setZoneTags" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setZoneTags()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setZoneTags(int|string|array <span class="argument">$Tag</span>) : boolean</pre>
+                <p><em>Function to set Zone Tags</em></p>
+                <p>Allows the setting of 1 or more Zone Tags for use in the RDA.
+This function will overwrite the existing Zone Tags if any have been set.
+Related functions are getZoneTags() and clearZoneTags()</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>int|string|array</td>
+                                <td>$Tag </td>
+                                <td><p>a single Zone tag or an array of Zone tags</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>returns false on failure.</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getZoneTags" name="method_getZoneTags" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getZoneTags()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getZoneTags() : array</pre>
+                <p><em>Get Zone Tags</em></p>
+                <p>Returns the list of Zone Tags
+Related functions are setZoneTags() and clearZoneTags()</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>array of Zone Tags</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_clearZoneTags" name="method_clearZoneTags" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">clearZoneTags()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">clearZoneTags(string|int|null <span class="argument">$Tag</span>) : boolean</pre>
+                <p><em>Clear Zone Tags</em></p>
+                <p>Clears out one or all of the zone Tags that have been set by setZoneTags().</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string|int|null</td>
+                                <td>$Tag </td>
+                                <td><p>A single zone Tag or Null. Passing null will clear out all Zone Tags.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>returns true on success</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setZoneNames" name="method_setZoneNames" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setZoneNames()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setZoneNames(int|string|array <span class="argument">$Name</span>) : boolean</pre>
+                <p><em>Set Zone Names</em></p>
+                <p>Allows the setting of 1 or more Zone Names for use in the RDA.
+This function will overwrite the existing Zone Names if any have been set.
+Related functions are getZoneNames() and clearZoneNames()</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>int|string|array</td>
+                                <td>$Name </td>
+                                <td><p>a single Zone Name or an array of Zone Names</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>returns false on failure.</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getZoneNames" name="method_getZoneNames" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getZoneNames()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getZoneNames() : array</pre>
+                <p><em>Get Zone Names</em></p>
+                <p>Returns the list of Zone Names
+Related functions are setZoneNames() and clearZoneNames()</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>array of Zone Names</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_clearZoneNames" name="method_clearZoneNames" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">clearZoneNames()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">clearZoneNames(string|int|null <span class="argument">$Name</span>) : boolean</pre>
+                <p><em>Clear Zone Names</em></p>
+                <p>Clears out one or all of the zone Names that have been set by setZoneNames().</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string|int|null</td>
+                                <td>$Name </td>
+                                <td><p>A single zone Name or Null. Passing null will clear out all Zone Names.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>returns true on success</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_resetZones" name="method_resetZones" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">resetZones()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">resetZones()</pre>
+                <p><em>Reset Zone Information</em></p>
+                <p>Resets the list of Zone IDs Tags and Names to be used by the RDA.  The same as calling clearZoneIDs(), clearZoneTags() and clearZoneNames().</p>
+
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setTemplateName" name="method_setTemplateName" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setTemplateName()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setTemplateName(string <span class="argument">$Name</span>)</pre>
+                <p><em>Set Template Name</em></p>
+                <p>Sets the template name to be used by CreatePage()</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$Name </td>
+                                <td><p>The name of the template to be used.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getTemplateName" name="method_getTemplateName" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getTemplateName()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getTemplateName() : string</pre>
+                <p><em>Get Template Name</em></p>
+                <p>Gets the currently set template name to be used by CreatePage()</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>Template Name</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setBulletinGuids" name="method_setBulletinGuids" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setBulletinGuids()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setBulletinGuids(string|array <span class="argument">$Guid</span>) : boolean</pre>
+                <p><em>Set Bulletin Guids</em></p>
+                <p>Allows the setting of 1 or more Bulletin Guids for use in the RDA.
+This function will overwrite the existing Bulletin Guids if any have been set.
+Related functions are getBulletinGuids() and clearBulletinGuids()</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string|array</td>
+                                <td>$Guid </td>
+                                <td><p>a single Bulletin Guids or an array of Bulletin Guidss</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>returns false on failure.</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getBulletinGuids" name="method_getBulletinGuids" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getBulletinGuids()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getBulletinGuids() : array</pre>
+                <p><em>Get Bulletin Guids</em></p>
+                <p>Returns the list of Bulletin Guids
+Related functions are setBulletinGuids() and clearBulletinGuids()</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>array of Bulletin Guids</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_clearBulletinGuids" name="method_clearBulletinGuids" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">clearBulletinGuids()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">clearBulletinGuids( <span class="argument">$Guid</span>) : boolean</pre>
+                <p><em>Clear Bulletin Guids</em></p>
+                <p>Clears out one or all of the Bulletin Guids that have been set by setBulletinGuids().</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$Guid </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>returns true on success</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setCrawlGuids" name="method_setCrawlGuids" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setCrawlGuids()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setCrawlGuids(string|array <span class="argument">$Guid</span>) : boolean</pre>
+                <p><em>Set Crawl Guids</em></p>
+                <p>Allows the setting of 1 or more Crawl Guids for use in the RDA.
+This function will overwrite the existing Crawl Guids if any have been set.
+Related functions are getCrawlGuids() and clearCrawlGuids()</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string|array</td>
+                                <td>$Guid </td>
+                                <td><p>a single Crawl Guid or an array of Crawl Guids</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>returns false on failure.</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getCrawlGuids" name="method_getCrawlGuids" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getCrawlGuids()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getCrawlGuids() : array</pre>
+                <p><em>Get Crawl Guids</em></p>
+                <p>Returns the list of Crawl Guids
+Related functions are setCrawlGuids() and clearCrawlGuids()</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>array of Crawl Guids</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_clearCrawlGuids" name="method_clearCrawlGuids" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">clearCrawlGuids()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">clearCrawlGuids( <span class="argument">$Guid</span>) : boolean</pre>
+                <p><em>Clear Crawl Guids</em></p>
+                <p>Clears out one or all of the Crawl Guids that have been set by setCrawlGuids().</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$Guid </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>returns true on success</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setBulletinTags" name="method_setBulletinTags" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setBulletinTags()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setBulletinTags( <span class="argument">$Tag</span>) : boolean</pre>
+                <p><em>Set Bulletin Tags</em></p>
+                <p>Allows the setting of 1 or more Bulletin Tags for use in the RDA.
+This function will overwrite the existing Bulletin Tags if any have been set.
+Related functions are getBulletinTags() and clearBulletinTags()</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$Tag </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>returns false on failure.</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getBulletinTags" name="method_getBulletinTags" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getBulletinTags()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getBulletinTags() : array</pre>
+                <p><em>Get Bulletin Tags</em></p>
+                <p>Returns the list of Bulletin Tags
+Related functions are setBulletinTags() and clearBulletinTags()</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>array of Bulletin Tags</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_clearBulletinTags" name="method_clearBulletinTags" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">clearBulletinTags()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">clearBulletinTags( <span class="argument">$Tag</span>) : boolean</pre>
+                <p><em>Clear Bulletin Tags</em></p>
+                <p>Clears out one or all of the Bulletin Tags that have been set by setBulletinTags().</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$Tag </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>returns true on success</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setSchedule" name="method_setSchedule" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setSchedule()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setSchedule(\DateTime <span class="argument">$DateOn</span>, \DateTime <span class="argument">$DateOff</span>)</pre>
+                <p><em>Set a Schedule</em></p>
+                <p>Sets a Schedule to be used when creating or updating a bulletin or crawl.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\DateTime</td>
+                                <td>$DateOn </td>
+                                <td><p>DateTime Object representing when the schdule begins</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\DateTime</td>
+                                <td>$DateOff </td>
+                                <td><p>DateTime Object representing when the schdule ends</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getSchedule" name="method_getSchedule" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getSchedule()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getSchedule() : string</pre>
+                <p><em>Get the Schdule</em></p>
+                <p>Gets the current schedule start and end dates and times that will be used to create or update bulletins and crawls</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>Representation of both the DateTimeOn and DateTimeOff separated by a en-dash, or 'Always On'. (ex.) '2014-04-05 00:00:00 - 2014-08-10 23:59:59'</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_clearSchedule" name="method_clearSchedule" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">clearSchedule()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">clearSchedule()</pre>
+                <p><em>Clear Schedule</em></p>
+                <p>This defaults the RDA command to an Always On state.</p>
+
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setCycleTime" name="method_setCycleTime" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setCycleTime()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setCycleTime(string <span class="argument">$TimeOn</span>, string <span class="argument">$TimeOff</span>) : boolean</pre>
+                <p><em>Set Cycle Time</em></p>
+                <p>Defines a start and end time to be used during each day of a bulletins schedule. Use a 24 hour time reference formatted 'HH:MM:SS' or 'HH:MM'.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$TimeOn </td>
+                                <td><p>String formatted as 'HH:MM:SS'</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$TimeOff </td>
+                                <td><p>String formatted as 'HH:MM:SS'</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>returns true on success or false on failure. Failure will not reset the Cycle Times.</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getCycleTime" name="method_getCycleTime" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getCycleTime()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getCycleTime() : string</pre>
+                <p><em>Get Cycle Time</em></p>
+                <p>Gets the currently set cycle time that will be used to create or update bulletins and crawls.</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>Cycle Time On and Off separated by an en-dash. (ex.) "08:30:00 - 23:15:00"</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_clearCycleTime" name="method_clearCycleTime" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">clearCycleTime()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">clearCycleTime()</pre>
+                <p><em>Clear Schedule</em></p>
+                <p>This defaults the Cycle Time to an Always On state by setting CycleTimeOn and CycleTimeOff to '00:00:00' and '23:59:59' respectively.</p>
+
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setWeekDays" name="method_setWeekDays" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setWeekDays()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setWeekDays(string <span class="argument">$Days</span>) : boolean</pre>
+                <p><em>Set Week Days</em></p>
+                <p>Sets the valid playback days for use within a bulletins schedule.  Most abbreviations or full day names are valid.  Days should be separated by a ' ', '-', ',' or ':'.  Do not mix separators.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$Days </td>
+                                <td><p>A properly formed string representation of the Days of the week. (ex.) 'M-T-W-Th-F' or 'Mon,Tuesday,Wed,Thur,Friday'</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>Returns true on success.
+Returns false if no days could be parsed and also sets the Weekdays to all on.</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setBlock" name="method_setBlock" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setBlock()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setBlock(string <span class="argument">$name</span>, string <span class="argument">$value</span>)</pre>
+                <p><em>Set Block</em></p>
+                <p>Prepares a Template block for use in Creating or Updating Bulletins.  Blocks have a name and a value.  Name is the block name as set in the Carousel Template Editor
+and value is the text in a text block, the uri in an RSS or web picture block and the GUID of a video or picture block.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$name </td>
+                                <td><p>the name of the template or bulletin block</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$value </td>
+                                <td><p>the value of the text block, a uri for web image and rss blocks or a GUID for picture and video blocks</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getBlocks" name="method_getBlocks" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getBlocks()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getBlocks() : array</pre>
+                <p><em>Get Blocks</em></p>
+                <p>Gets and array of the currently set blocks.</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>Array of the currently set blocks</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_clearBlocks" name="method_clearBlocks" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">clearBlocks()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">clearBlocks(int|null <span class="argument">$key</span>) : boolean</pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>int|null</td>
+                                <td>$key </td>
+                                <td><p>integer representing the key of the block as referenced in getBlocks(), or null will clear out all blocks.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>returns true for no good reason.</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_IsAlert" name="method_IsAlert" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">IsAlert()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">IsAlert(boolean|null <span class="argument">$boolean</span>) : boolean</pre>
+                <p><em>Is Alert</em></p>
+                <p>Gets or Sets the Alerting Feature. If a Boolean is supplied as an argument, it will set the current alert status
+if no argument is supplied it will tell you if the current RDA is set to prepare an alert bulletin.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean|null</td>
+                                <td>$boolean </td>
+                                <td><p>Sets the current alert status if supplied.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>Returns the current value of the alert setting if no arguement is passed in</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_CreatePage" name="method_CreatePage" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">CreatePage()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">CreatePage() : array|boolean</pre>
+                <p><em>Create Page</em></p>
+                <p>Creates Bulletins in Carousel from a template.  This requires zone information, a template name, and
+and matching blocks to be set.  Optional scheduling information can also be set.  The command takes no arguments and requires
+that all needed information be set in advance using other methods. One bulletin will be created for each zone and each zone supplied
+must have the template available in it.</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    array|boolean
+                                            &mdash; <p>reutrns an array of created bulletin GUIDs on success, or false on failure.
+Upon failure an error message will be available in getLastError();</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_UpdatePage" name="method_UpdatePage" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">UpdatePage()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">UpdatePage() : array|boolean</pre>
+                <p><em>Update Page</em></p>
+                <p>Update a Page or 'Bulletin' in Carousel from a template.  This requires a bulletin GUID, or
+bulletin tags as well as matching blocks to be set.  Optional scheduling information can also be set.  The command takes no arguments and requires
+that all needed information be set in advance using other methods.</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    array|boolean
+                                            &mdash; <p>reutrns an array of effected bulletin GUIDs on success, or false on failure.
+Upon failure an error message will be available in getLastError(); NOTE: if supplied an invalid GUID, the system
+will behave as if a bulletin was updated.</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_ChangePageStatus" name="method_ChangePageStatus" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">ChangePageStatus()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">ChangePageStatus( <span class="argument">$Status</span>) : array</pre>
+                <p><em>Change Page Status</em></p>
+                <p>Changes the "status" of a bulletin.  This requires bulletin GUIDs or Bulletin Tags to be set and a status of "on" or "off" supplied as an argument.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$Status </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>reutrns an associative array of GUID->true on success and GUID->false on failure. Tags will come back under TagList->boolean
+Upon failure an error message will be available in getLastError();</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_SetPageStatus" name="method_SetPageStatus" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">SetPageStatus()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">SetPageStatus(int <span class="argument">$Status</span>) : array</pre>
+                <p><em>Change Page Status</em></p>
+                <p>Changes the "status" of a bulletin.  This requires bulletin GUIDs or Bulletin Tags to be set and an integer representation of status supplied as an argument.
+Current=1, Queued=2, Hold=4, Saved=8, Stale=16</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>int</td>
+                                <td>$Status </td>
+                                <td><p>Integer representation of bulletin status Current=1, Queued=2, Hold=4, Saved=8, Stale=16
+NOTE: it is not possible to set a bulletin that would otherwise be current to queued status or vice versa.  Instead used Stale or Saved or change schedule information.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>reutrns an associative array of GUID->true on success and GUID->false on failure. Tags will come back under TagList->boolean
+Upon failure an error message will be available in getLastError();</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_DeactivateAllAlertPages" name="method_DeactivateAllAlertPages" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">DeactivateAllAlertPages()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">DeactivateAllAlertPages() : boolean</pre>
+                <p><em>Deactivate All Alert Pages</em></p>
+                <p>Deactivates all active alerts in a set of Zones.  Requires that zone information be set.</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>returns true on success and false on failure.
+Upon failure an error message will be available in getLastError();</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_ArchivePage" name="method_ArchivePage" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">ArchivePage()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">ArchivePage(string <span class="argument">$GUID</span>) : boolean</pre>
+                <p><em>Archive Page</em></p>
+                <p>Moves a Bulletin into Stale Bulletins.  Requires a bulletin GUID to be supplied as an argument.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$GUID </td>
+                                <td><p>Guid of bulletin to be archived</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>returns true on success or false on failure.
+Upon failure an error message will be available in getLastError();</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_DeletePage" name="method_DeletePage" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">DeletePage()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">DeletePage(string <span class="argument">$GUID</span>) : boolean</pre>
+                <p><em>Delete Page</em></p>
+                <p>Deletes a Bulletin.  Requires a bulletin GUID to be supplied as an argument.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$GUID </td>
+                                <td><p>Guid of bulletin to be deleted</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>returns true on success or false on failure.
+Upon failure an error message will be available in getLastError();</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_DeleteAllUserPages" name="method_DeleteAllUserPages" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">DeleteAllUserPages()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">DeleteAllUserPages() : boolean</pre>
+                <p><em>Delete All User Pages</em></p>
+                <p>Deletes ALL Pages created by the current user as defined in the RDA object creation.
+NOTE: BE CAREFULL as there is no confirmation and if logged in as an admin user or non RDA specific account,
+you are liable to delete all bulletins on the system.  THIS IS NOT UNDOABLE.</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>returns true on success or false on failure.
+Upon failure an error message will be available in getLastError();</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_UpdateCrawl" name="method_UpdateCrawl" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">UpdateCrawl()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">UpdateCrawl( <span class="argument">$Text</span>) : boolean|array</pre>
+                <p><em>Update Crawl</em></p>
+                <p>Updates the text in a crawl bulletin.  This requires that a GUID representing the crawl be set.  As of Carousel 6.4.5, there is a bug in Carousl that prevents this update from
+being sent to the player.  The Server will update crawl text but the player will not.  It is best to Delete/Create new.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$Text </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    boolean|array
+                                            &mdash; <p>returns an array of GUIDS on success or false on failure.
+Upon failure an error message will be available in getLastError();</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_CreateCrawl" name="method_CreateCrawl" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">CreateCrawl()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">CreateCrawl( <span class="argument">$Text</span>) : boolean|array</pre>
+                <p><em>Create Crawl</em></p>
+                <p>Creates a crawl bulletin.  Requires that at least 1 Crawl Zone Tag, ID or Name be set.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$Text </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    boolean|array
+                                            &mdash; <p>returns an array of GUIDS on success or false on failure.
+Upon failure an error message will be available in getLastError();</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_GetZoneList" name="method_GetZoneList" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">GetZoneList()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">GetZoneList() : boolean|array</pre>
+                <p><em>Get Zone List</em></p>
+                <p>Gets the zone information for the entire server.</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    boolean|array
+                                            &mdash; <p>Array of Zone information associative arrays on success or false on failure
+Zone information array contains 'ZoneID', 'ZoneName', and 'ZoneType'.
+Upon failure an error message will be available in getLastError();</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_GetTemplateList" name="method_GetTemplateList" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">GetTemplateList()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">GetTemplateList() : boolean|array</pre>
+                <p><em>Get Template List</em></p>
+                <p>Gets the Template information for select zone IDs.  Requires that Zone IDs be set.</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    boolean|array
+                                            &mdash; <p>Returns an associative array of Template information organized by Zone ID
+Template information consists of 'TemplateName' and a 'Block' array with each value having 'Name' 'Value' and 'Type' attributes
+Returns False on failure.
+Upon failure an error message will be available in getLastError();</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_GetBulletinList" name="method_GetBulletinList" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">GetBulletinList()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">GetBulletinList() : boolean|array</pre>
+                <p><em>Get Bulletin List</em></p>
+                <p>Gets the Bulletin information for select zone IDs.  Requires that Zone IDs be set.</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    boolean|array
+                                            &mdash; <p>Returns an associative array of Bulletin information organized by Zone ID.
+Bulletin information contains 'Description', 'AlwaysOn', 'DateTimeOn', 'DateTimeOff', 'CycleTimeOn', 'CycleTimeOff', 'Weekdays' (bitfield), 'WebEnabled',
+'PageType', 'DisplayDuration', 'PreviewImagePath', 'ThumbnailImagePath', 'FullImagePath', 'GUID', 'ObjectType', 'PageStatus',
+and a 'Block' array with each value having 'Name' 'Value' and 'Type' attributes.
+Returns False on failure.
+Upon failure an error message will be available in getLastError();</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_GetPictureList" name="method_GetPictureList" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">GetPictureList()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">GetPictureList() : boolean|array</pre>
+                <p><em>Get Picture List</em></p>
+                <p>Gets the image media information for select zone IDs.  Requires that Zone IDs be set.</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    boolean|array
+                                            &mdash; <p>Returns an associative array of Image information organized by Zone ID
+Image information contains 'Name', 'Value' (GUID), 'PreviewImagePath', 'TinyImagePath', 'ThumbnailImagePath', and 'FullImagePath'.
+Returns False on failure.
+Upon failure an error message will be available in getLastError();</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_GetVideoList" name="method_GetVideoList" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">GetVideoList()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">GetVideoList() : boolean|array</pre>
+                <p><em>Get Picture List</em></p>
+                <p>Gets the image media information for select zone IDs.  Requires that Zone IDs be set.</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    boolean|array
+                                            &mdash; <p>Returns an associative array of Image information organized by Zone ID
+Image information contains 'Name', 'Value' (GUID), 'PreviewImagePath', 'TinyImagePath', and 'ThumbnailImagePath'.
+Returns False on failure. NOTE: this will return an empty array if no video media is present.
+Upon failure an error message will be available in getLastError();</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_GetPlayerStatus" name="method_GetPlayerStatus" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">GetPlayerStatus()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">GetPlayerStatus() : boolean|array</pre>
+                <p><em>Get Player Status</em></p>
+                <p>Gets the current status of every player that has connected to the server.</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    boolean|array
+                                            &mdash; <p>Returns an array of player statuses for the server.
+Player status consists of 'HostName', 'HostAddress', HardwareID, 'VersionStatus', 'PlayerVersion', 'CheckinStatus', 'LastCheckinUTC', and 'SubscribedChannelName'.</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getLastError" name="method_getLastError" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getLastError()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getLastError()</pre>
+                <p><em></em></p>
+                
+
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_fireRDA" name="method_fireRDA" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">fireRDA()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">fireRDA( <span class="argument">$xml</span>,  <span class="argument">$command</span>)</pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$xml </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$command </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_processResponse" name="method_processResponse" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">processResponse()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">processResponse( <span class="argument">$response</span>,  <span class="argument">$command</span>)</pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$response </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$command </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">RDA.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/RDA.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on May 5th, 2014 at 15:51.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>
