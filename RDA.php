@@ -430,17 +430,18 @@ class RDA {
      * 
      * @param string $Days A properly formed string representation of the Days of the week. (ex.) 'M-T-W-Th-F' or 'Mon,Tuesday,Wed,Thur,Friday'
      * 
-     * @return boolean Returns true on success.
-     * Returns false if no days could be parsed and also sets the Weekdays to all on.  
+     * @return boolean Returns true if weekdays have been set.
+     * Returns false if no days could be parsed and weekdays have been cleared.  
      */
     public function setWeekDays($Days = 'Sat-Mon-Tue-Wed-Thur-Fri-Sat'){
         if(preg_match('/:/', $Days) !== 0){$X = explode(':', $Days);}
         elseif(preg_match('/-/', $Days) !== 0){$X = explode('-', $Days);}
         elseif(preg_match("/,/", $Days) !== 0){$X = explode(',', $Days);}
         elseif(preg_match('/ /', $Days) !== 0){$X = explode(' ', $Days);}
-        
+        else{$X = array($Days);}
         $Y = array(false,false,false,false,false,false,false);
         $result = '';
+        
         foreach($X as $x){
             switch(trim($x)){
                 case 'Sat':
@@ -514,12 +515,14 @@ class RDA {
             $result .= ($y)? '1':'0';
         }
         $DayBits = base_convert($result,2,10);
-        var_dump($DayBits);
+        
+        $this->Weekdays = $DayBits;
         if($DayBits === 0){
-            $this->Weekdays = 127;
             return 0;
         }
-        else {$this->Weekdays = $DayBits;}
+        else {
+            return 1;
+        }
     }
     
     /**
