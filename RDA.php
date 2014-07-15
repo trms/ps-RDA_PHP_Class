@@ -428,7 +428,7 @@ class RDA {
      * 
      * Sets the valid playback days for use within a bulletins schedule.  Most abbreviations or full day names are valid.  Days should be separated by a ' ', '-', ',' or ':'.  Do not mix separators.
      * 
-     * @param string $Days A properly formed string representation of the Days of the week. (ex.) 'M-T-W-Th-F' or 'Mon,Tuesday,Wed,Thur,Friday'
+     * @param string $Days A properly formed string representation of the Days of the week. (ex.) 'M-T-W-Th-F' or 'Mon,Tuesday,Wed,Thur,Friday' or a blank string for none
      * 
      * @return boolean Returns true if weekdays have been set.
      * Returns false if no days could be parsed and weekdays have been cleared.  
