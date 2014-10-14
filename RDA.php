@@ -38,6 +38,8 @@ class RDA {
     private $CrawlGuid = array();
     private $Alert = false;
     
+    private $ExclusiveAlert = false;
+
     private $Block = array();
     
     private $AlwaysOn = true;
@@ -433,7 +435,7 @@ class RDA {
      * @return boolean Returns true if weekdays have been set.
      * Returns false if no days could be parsed and weekdays have been cleared.  
      */
-    public function setWeekDays($Days = 'Sat-Mon-Tue-Wed-Thur-Fri-Sat'){
+    public function setWeekDays($Days = 'Sun-Mon-Tue-Wed-Thur-Fri-Sat'){
         if(preg_match('/:/', $Days) !== 0){$X = explode(':', $Days);}
         elseif(preg_match('/-/', $Days) !== 0){$X = explode('-', $Days);}
         elseif(preg_match("/,/", $Days) !== 0){$X = explode(',', $Days);}
@@ -580,6 +582,24 @@ class RDA {
     }
     
     /**
+     * Is Exclusive Alert
+     * 
+     * Gets or Sets the Exclusive Alerting Feature. If a Boolean is supplied as an argument, it will set the current exclusive alert status
+     * if no argument is supplied it will tell you if the current RDA is set to prepare an exclusive alert bulletin.  Exclusive Alerts will disable all other alerts in the Zone.
+     * 
+     * @param boolean|null $boolean Sets the current alert status if supplied.
+     * @return boolean Returns the current value of the alert setting if no arguement is passed in
+     */
+    public function isExclusiveAlert($boolean = ''){
+        if(isset($boolean) && is_bool($boolean)){
+            $this->ExclusiveAlert = $boolean;
+        }
+        else{
+            return $this->ExclusiveAlert;
+        }
+    }
+
+    /**
      * Create Page
      * 
      * Creates Bulletins in Carousel from a template.  This requires zone information, a template name, and 
@@ -655,7 +675,13 @@ class RDA {
             $PT = 'Standard';
         $PageType = $xml->createElement('PageType',$PT);
         $ActionRoot->appendChild($PageType);
-        
+
+        // if($this->ExclusiveAlert){ //invalid element??
+        //         $ExclusiveAlert = $xml->createElement('ExclusiveAlertOn',true);
+        //         $ActionRoot->appendChild($ExclusiveAlert);
+        //     }
+
+
         $PageTemplate = $xml->createElement('PageTemplate');
         $TemplateName = $xml->createElement('TemplateName',$this->TemplateName);
         $PageTemplate->appendChild($TemplateName);
@@ -741,6 +767,11 @@ class RDA {
             $PageType = $xml->createElement('PageType',$PT);
             $ActionRoot->appendChild($PageType);
 
+            if($this->ExclusiveAlert){
+                $ExclusiveAlert = $xml->createElement('ExclusiveAlertOn',true);
+                $ActionRoot->appendChild($ExclusiveAlert);
+            }
+
             foreach($this->Block as $block){
                 $BlockNode = $xml->createElement('Block');
                 $Name = $xml->createAttribute('Name');
@@ -814,6 +845,11 @@ class RDA {
                 $PT = 'Standard';
             $PageType = $xml->createElement('PageType',$PT);
             $ActionRoot->appendChild($PageType);
+
+            if($this->ExclusiveAlert){
+                $ExclusiveAlert = $xml->createElement('ExclusiveAlertOn','true');
+                $ActionRoot->appendChild($ExclusiveAlert);
+            }
 
             foreach($this->Block as $block){
                 $BlockNode = $xml->createElement('Block');
@@ -1438,8 +1474,8 @@ class RDA {
     private function fireRDA($xml,$command = null){
         
         $xml->formatOutput = true;
-        $XML = $xml->saveXML();
-        //var_dump($XML);
+        // $XML = $xml->saveXML();
+        // var_dump($XML);
         
         try{
             $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
