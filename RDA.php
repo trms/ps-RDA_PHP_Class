@@ -755,10 +755,15 @@ class RDA {
             $WebEnabled = $xml->createElement('WebEnabled',$_WebEnabled);
             $ActionRoot->appendChild($WebEnabled);
 
-            $Description = $xml->createElement('Description');
-            $DescriptionText = $xml->createTextNode($this->Description);
-            $Description->appendChild($DescriptionText);
-            $ActionRoot->appendChild($Description);
+            if($this->Description !== 'RDA Created Bulletin')
+            {
+                
+                $Description = $xml->createElement('Description');
+                $DescriptionText = $xml->createTextNode($this->Description);
+                $Description->appendChild($DescriptionText);
+                $ActionRoot->appendChild($Description);
+                
+            }
 
             if($this->Alert)
                 $PT = 'Alert';
@@ -834,10 +839,15 @@ class RDA {
             $WebEnabled = $xml->createElement('WebEnabled',$_WebEnabled);
             $ActionRoot->appendChild($WebEnabled);
 
-            $Description = $xml->createElement('Description');
-            $DescriptionText = $xml->createTextNode($this->Description);
-            $Description->appendChild($DescriptionText);
-            $ActionRoot->appendChild($Description);
+            if($this->Description !== 'RDA Created Bulletin')
+            {
+                
+                $Description = $xml->createElement('Description');
+                $DescriptionText = $xml->createTextNode($this->Description);
+                $Description->appendChild($DescriptionText);
+                $ActionRoot->appendChild($Description);
+                
+            }
 
             if($this->Alert)
                 $PT = 'Alert';
@@ -1180,10 +1190,15 @@ class RDA {
             $WebEnabled = $xml->createElement('WebEnabled',$_WebEnabled);
             $ActionRoot->appendChild($WebEnabled);
 
-            $Description = $xml->createElement('Description');
-            $DescriptionText = $xml->createTextNode($this->Description);
-            $Description->appendChild($DescriptionText);
-            $ActionRoot->appendChild($Description);
+            if($this->Description !== 'RDA Created Bulletin')
+            {
+                
+                $Description = $xml->createElement('Description');
+                $DescriptionText = $xml->createTextNode($this->Description);
+                $Description->appendChild($DescriptionText);
+                $ActionRoot->appendChild($Description);
+                
+            }
 
             $result = $this->fireRDA($xml,$command);
             if($result){
@@ -1474,7 +1489,7 @@ class RDA {
     private function fireRDA($xml,$command = null){
         
         $xml->formatOutput = true;
-        // $XML = $xml->saveXML();
+         $XML = $xml->saveXML();
         // var_dump($XML);
         
         try{
