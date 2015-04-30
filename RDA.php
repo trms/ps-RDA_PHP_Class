@@ -42,7 +42,7 @@ class RDA {
 
     private $Block = array();
     
-    private $AlwaysOn = true;
+    private $AlwaysOn = null;
     
     public $DateTimeOn = '';
     private $DateTimeOff = '';
@@ -641,15 +641,20 @@ class RDA {
         }
         $ActionRoot->appendChild($ZoneSet);
         
-        $_AlwaysOn = ($this->AlwaysOn)?'true':'false';
+        
+        $_AlwaysOn = ($this->AlwaysOn || $this->AlwaysOn === null)?'true':'false';
         $AlwaysOn = $xml->createElement('AlwaysOn', $_AlwaysOn);
         $ActionRoot->appendChild($AlwaysOn);
-        if(!$this->AlwaysOn){
+            
+        if($this->AlwaysOn === false)
+        {
             $DateTimeOn = $xml->createElement('DateTimeOn', $this->DateTimeOn);
             $DateTimeOff = $xml->createElement('DateTimeOff', $this->DateTimeOff);
             $ActionRoot->appendChild($DateTimeOn);
             $ActionRoot->appendChild($DateTimeOff);
         }
+        
+
         $CycleTimeOn = $xml->createElement('CycleTimeOn',$this->CycleTimeOn);
         $ActionRoot->appendChild($CycleTimeOn);
         $CycleTimeOff = $xml->createElement('CycleTimeOff',$this->CycleTimeOff);
@@ -732,15 +737,21 @@ class RDA {
             $UpdateGUID = $xml->createElement('UpdateGUID',$GUID);
             $ActionRoot->appendChild($UpdateGUID);
 
-            $_AlwaysOn = ($this->AlwaysOn)?'true':'false';
-            $AlwaysOn = $xml->createElement('AlwaysOn', $_AlwaysOn);
-            $ActionRoot->appendChild($AlwaysOn);
-            if(!$this->AlwaysOn){
-                $DateTimeOn = $xml->createElement('DateTimeOn', $this->DateTimeOn);
-                $DateTimeOff = $xml->createElement('DateTimeOff', $this->DateTimeOff);
-                $ActionRoot->appendChild($DateTimeOn);
-                $ActionRoot->appendChild($DateTimeOff);
+            if($this->AlwaysOn !== null)
+            {
+                $_AlwaysOn = ($this->AlwaysOn)?'true':'false';
+                $AlwaysOn = $xml->createElement('AlwaysOn', $_AlwaysOn);
+                $ActionRoot->appendChild($AlwaysOn);
+                
+                if(!$this->AlwaysOn)
+                {
+                    $DateTimeOn = $xml->createElement('DateTimeOn', $this->DateTimeOn);
+                    $DateTimeOff = $xml->createElement('DateTimeOff', $this->DateTimeOff);
+                    $ActionRoot->appendChild($DateTimeOn);
+                    $ActionRoot->appendChild($DateTimeOff);
+                }
             }
+            
             $CycleTimeOn = $xml->createElement('CycleTimeOn',$this->CycleTimeOn);
             $ActionRoot->appendChild($CycleTimeOn);
             $CycleTimeOff = $xml->createElement('CycleTimeOff',$this->CycleTimeOff);
@@ -816,15 +827,21 @@ class RDA {
                 }
             $ActionRoot->appendChild($SelectBulletinTags);
 
-            $_AlwaysOn = ($this->AlwaysOn)?'true':'false';
-            $AlwaysOn = $xml->createElement('AlwaysOn', $_AlwaysOn);
-            $ActionRoot->appendChild($AlwaysOn);
-            if(!$this->AlwaysOn){
-                $DateTimeOn = $xml->createElement('DateTimeOn', $this->DateTimeOn);
-                $DateTimeOff = $xml->createElement('DateTimeOff', $this->DateTimeOff);
-                $ActionRoot->appendChild($DateTimeOn);
-                $ActionRoot->appendChild($DateTimeOff);
+            if($this->AlwaysOn !== null)
+            {
+                $_AlwaysOn = ($this->AlwaysOn)?'true':'false';
+                $AlwaysOn = $xml->createElement('AlwaysOn', $_AlwaysOn);
+                $ActionRoot->appendChild($AlwaysOn);
+                
+                if(!$this->AlwaysOn)
+                {
+                    $DateTimeOn = $xml->createElement('DateTimeOn', $this->DateTimeOn);
+                    $DateTimeOff = $xml->createElement('DateTimeOff', $this->DateTimeOff);
+                    $ActionRoot->appendChild($DateTimeOn);
+                    $ActionRoot->appendChild($DateTimeOff);
+                }
             }
+
             $CycleTimeOn = $xml->createElement('CycleTimeOn',$this->CycleTimeOn);
             $ActionRoot->appendChild($CycleTimeOn);
             $CycleTimeOff = $xml->createElement('CycleTimeOff',$this->CycleTimeOff);
@@ -1167,15 +1184,21 @@ class RDA {
             }
             $ActionRoot->appendChild($ZoneSet);
             
-            $_AlwaysOn = ($this->AlwaysOn)?'true':'false';
-            $AlwaysOn = $xml->createElement('AlwaysOn', $_AlwaysOn);
-            $ActionRoot->appendChild($AlwaysOn);
-            if(!$this->AlwaysOn){
-                $DateTimeOn = $xml->createElement('DateTimeOn', $this->DateTimeOn);
-                $DateTimeOff = $xml->createElement('DateTimeOff', $this->DateTimeOff);
-                $ActionRoot->appendChild($DateTimeOn);
-                $ActionRoot->appendChild($DateTimeOff);
+            if($this->AlwaysOn !== null)
+            {
+                $_AlwaysOn = ($this->AlwaysOn)?'true':'false';
+                $AlwaysOn = $xml->createElement('AlwaysOn', $_AlwaysOn);
+                $ActionRoot->appendChild($AlwaysOn);
+                
+                if(!$this->AlwaysOn)
+                {
+                    $DateTimeOn = $xml->createElement('DateTimeOn', $this->DateTimeOn);
+                    $DateTimeOff = $xml->createElement('DateTimeOff', $this->DateTimeOff);
+                    $ActionRoot->appendChild($DateTimeOn);
+                    $ActionRoot->appendChild($DateTimeOff);
+                }
             }
+
             $CycleTimeOn = $xml->createElement('CycleTimeOn',$this->CycleTimeOn);
             $ActionRoot->appendChild($CycleTimeOn);
             $CycleTimeOff = $xml->createElement('CycleTimeOff',$this->CycleTimeOff);
@@ -1255,15 +1278,20 @@ class RDA {
         }
         $ActionRoot->appendChild($ZoneSet);
         
-        $_AlwaysOn = ($this->AlwaysOn)?'true':'false';
+        
+        $_AlwaysOn = ($this->AlwaysOn || $this->AlwaysOn === null)?'true':'false';
         $AlwaysOn = $xml->createElement('AlwaysOn', $_AlwaysOn);
         $ActionRoot->appendChild($AlwaysOn);
-        if(!$this->AlwaysOn){
+            
+        if($this->AlwaysOn === false)
+        {
             $DateTimeOn = $xml->createElement('DateTimeOn', $this->DateTimeOn);
             $DateTimeOff = $xml->createElement('DateTimeOff', $this->DateTimeOff);
             $ActionRoot->appendChild($DateTimeOn);
             $ActionRoot->appendChild($DateTimeOff);
         }
+        
+
         $CycleTimeOn = $xml->createElement('CycleTimeOn',$this->CycleTimeOn);
         $ActionRoot->appendChild($CycleTimeOn);
         $CycleTimeOff = $xml->createElement('CycleTimeOff',$this->CycleTimeOff);
