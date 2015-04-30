@@ -609,6 +609,24 @@ class RDA {
         }
     }
 
+
+    /**
+     * Is Exclusive Alert
+     * 
+     * Gets or Sets the Exclusive Alerting Feature. If a Boolean is supplied as an argument, it will set the current exclusive alert status
+     * if no argument is supplied it will tell you if the current RDA is set to prepare an exclusive alert bulletin.  Exclusive Alerts will disable all other alerts in the Zone.
+     * 
+     * @param boolean|null $boolean Sets the current alert status if supplied.
+     * @return boolean Returns the current value of the alert setting if no arguement is passed in
+     */
+    public function setDisplayDuration($duration = 30){
+        $this->DisplayDuration = $duration;
+        $this->DisplayDurationSet = true;
+    }
+
+
+
+
     /**
      * Create Page
      * 
