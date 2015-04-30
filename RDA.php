@@ -46,12 +46,17 @@ class RDA {
     
     public $DateTimeOn = '';
     private $DateTimeOff = '';
+
+    private $CycletimeSet = false;
     private $CycleTimeOn = '00:00:00';
     private $CycleTimeOff = '23:59:59';
     
+    private $WeekdaysSet = false;
     private $Weekdays = 127;
     
     public $WebEnabled = true;
+
+    private $DisplayDurationSet = false;
     public $DisplayDuration = 30;
     
     private $LastError ='';
@@ -390,6 +395,7 @@ class RDA {
      * @return boolean returns true on success or false on failure. Failure will not reset the Cycle Times.
      */
     public function setCycleTime($TimeOn = '00:00:00',$TimeOff = '23:59:59'){
+        $this->CycleTimeSet = true;
         if(preg_match('/^[0-9]{1,2}:[0-9]{2}$/',$TimeOn) === 1){$TimeOn.=':00';}
         if(preg_match('/^[0-9]{1,2}:[0-9]{2}$/',$TimeOff) === 1){$TimeOff.=':00';}
         
@@ -413,6 +419,7 @@ class RDA {
      * 
      */
     public function getCycleTime(){
+        
         return $this->CycleTimeOn.' - '.$this->CycleTimeOff;
     }
     /**
@@ -436,6 +443,9 @@ class RDA {
      * Returns false if no days could be parsed and weekdays have been cleared.  
      */
     public function setWeekDays($Days = 'Sun-Mon-Tue-Wed-Thur-Fri-Sat'){
+        
+        $this->WeekdaysSet = true;
+
         if(preg_match('/:/', $Days) !== 0){$X = explode(':', $Days);}
         elseif(preg_match('/-/', $Days) !== 0){$X = explode('-', $Days);}
         elseif(preg_match("/,/", $Days) !== 0){$X = explode(',', $Days);}
@@ -752,16 +762,22 @@ class RDA {
                 }
             }
             
-            $CycleTimeOn = $xml->createElement('CycleTimeOn',$this->CycleTimeOn);
-            $ActionRoot->appendChild($CycleTimeOn);
-            $CycleTimeOff = $xml->createElement('CycleTimeOff',$this->CycleTimeOff);
-            $ActionRoot->appendChild($CycleTimeOff);
-            $Weekdays = $xml->createElement('Weekdays',$this->Weekdays);
-            $ActionRoot->appendChild($Weekdays);
+            if($this->CycleTimeSet === true)
+            {
+                $CycleTimeOn = $xml->createElement('CycleTimeOn',$this->CycleTimeOn);
+                $ActionRoot->appendChild($CycleTimeOn);
+                $CycleTimeOff = $xml->createElement('CycleTimeOff',$this->CycleTimeOff);
+                $ActionRoot->appendChild($CycleTimeOff);
+            }
 
-            //$DisplayDuration = $xml->createElement('DisplayDuration',$this->DisplayDuration);
-            //$ActionRoot->appendChild($DisplayDuration);
+            
+            if($this->WeekdaysSet === true)
+            {
+                $Weekdays = $xml->createElement('Weekdays',$this->Weekdays);
+                $ActionRoot->appendChild($Weekdays);
+            }
 
+            
             $_WebEnabled = ($this->WebEnabled)?'true':'false';
             $WebEnabled = $xml->createElement('WebEnabled',$_WebEnabled);
             $ActionRoot->appendChild($WebEnabled);
@@ -842,15 +858,21 @@ class RDA {
                 }
             }
 
-            $CycleTimeOn = $xml->createElement('CycleTimeOn',$this->CycleTimeOn);
-            $ActionRoot->appendChild($CycleTimeOn);
-            $CycleTimeOff = $xml->createElement('CycleTimeOff',$this->CycleTimeOff);
-            $ActionRoot->appendChild($CycleTimeOff);
-            $Weekdays = $xml->createElement('Weekdays',$this->Weekdays);
-            $ActionRoot->appendChild($Weekdays);
+            
+            if($this->CycleTimeSet === true)
+            {
+                $CycleTimeOn = $xml->createElement('CycleTimeOn',$this->CycleTimeOn);
+                $ActionRoot->appendChild($CycleTimeOn);
+                $CycleTimeOff = $xml->createElement('CycleTimeOff',$this->CycleTimeOff);
+                $ActionRoot->appendChild($CycleTimeOff);
+            }
 
-            //$DisplayDuration = $xml->createElement('DisplayDuration',$this->DisplayDuration);
-            //$ActionRoot->appendChild($DisplayDuration);
+            
+            if($this->WeekdaysSet === true)
+            {
+                $Weekdays = $xml->createElement('Weekdays',$this->Weekdays);
+                $ActionRoot->appendChild($Weekdays);
+            }
 
             $_WebEnabled = ($this->WebEnabled)?'true':'false';
             $WebEnabled = $xml->createElement('WebEnabled',$_WebEnabled);
@@ -1199,15 +1221,21 @@ class RDA {
                 }
             }
 
-            $CycleTimeOn = $xml->createElement('CycleTimeOn',$this->CycleTimeOn);
-            $ActionRoot->appendChild($CycleTimeOn);
-            $CycleTimeOff = $xml->createElement('CycleTimeOff',$this->CycleTimeOff);
-            $ActionRoot->appendChild($CycleTimeOff);
-            $Weekdays = $xml->createElement('Weekdays',$this->Weekdays);
-            $ActionRoot->appendChild($Weekdays);
+            
+            if($this->CycleTimeSet === true)
+            {
+                $CycleTimeOn = $xml->createElement('CycleTimeOn',$this->CycleTimeOn);
+                $ActionRoot->appendChild($CycleTimeOn);
+                $CycleTimeOff = $xml->createElement('CycleTimeOff',$this->CycleTimeOff);
+                $ActionRoot->appendChild($CycleTimeOff);
+            }
 
-            //$DisplayDuration = $xml->createElement('DisplayDuration',$this->DisplayDuration);
-            //$ActionRoot->appendChild($DisplayDuration);
+            
+            if($this->WeekdaysSet === true)
+            {
+                $Weekdays = $xml->createElement('Weekdays',$this->Weekdays);
+                $ActionRoot->appendChild($Weekdays);
+            }
 
             $_WebEnabled = ($this->WebEnabled)?'true':'false';
             $WebEnabled = $xml->createElement('WebEnabled',$_WebEnabled);
