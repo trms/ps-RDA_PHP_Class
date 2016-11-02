@@ -1585,7 +1585,7 @@ class RDA {
                 $buffer = socket_read($socket, 1024);
                 $response .= $buffer;
             }
-            while(strpos($buffer,'</CarouselResponse>') === FALSE);
+            while(strpos($response,'</CarouselResponse>') === FALSE);
             socket_close($socket);
             $response = $this->processResponse($response,$command);
             
